@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+
 console.log("hello world");
 const db = require("./models/index");
 app.use("/", (req, res) => {
@@ -12,3 +13,6 @@ app.listen(3030, () => {
   console.log("sweeety");
   console.log("server is running on 3030 port");
 });
+const userRoutes = require("./resources/users/user-route.js");
+
+app.use("/", userRoutes);
