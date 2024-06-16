@@ -9,7 +9,7 @@ const createUser = async (req, res) => {
       res.status(409).json("user already exist");
     }
     const newUser = await createUserQuery(user);
-    res.status(201).json();
+    res.status(201).json(newUser);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "error creating user" });
