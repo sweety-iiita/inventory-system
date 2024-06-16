@@ -5,6 +5,7 @@ const getUsers = require("./apis/get-users");
 const signIn = require("./apis/user-sign-in");
 const signUp = require("./apis/user-sign-up");
 const verifyOtp = require("./apis/verify-otp");
+const userListPagination = require("./apis/user-list-pagination");
 const router = express.Router();
 console.log("sweeeeeeeeeeeeeeeeeeeeeeeeeeeeeeety");
 
@@ -14,5 +15,6 @@ router.get("/get-users", getUsers);
 router.post("/sign-in", signIn);
 router.post("/sign-up", signUp);
 router.post("/verify-otp", verifyOtp);
+router.get("/user-list-pagination", userListPagination);
 
 module.exports = router;
