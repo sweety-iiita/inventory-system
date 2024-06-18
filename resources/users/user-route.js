@@ -7,8 +7,10 @@ const signUp = require("./apis/user-sign-up");
 const verifyOtp = require("./apis/verify-otp");
 const userListPagination = require("./apis/get-all-users");
 const getUserByPk = require("./apis/get-user-by-pk");
+const deleteUser = require("./apis/delete-user");
+const updateUser = require("./apis/update-user");
+const patchUser = require("./apis/patch-user");
 const router = express.Router();
-console.log("sweeeeeeeeeeeeeeeeeeeeeeeeeeeeeeety");
 
 router.post("/create-user", createUser);
 router.post("/create-users", createBulkUsers);
@@ -18,5 +20,8 @@ router.post("/sign-up", signUp);
 router.post("/verify-otp", verifyOtp);
 router.get("/user-list-pagination", userListPagination);
 router.get("/get-user/:id", getUserByPk);
+router.delete("/delete-user", deleteUser);
+router.put("/update-user/:id", updateUser);
+router.patch("/patch-user/:id", patchUser);
 
 module.exports = router;
